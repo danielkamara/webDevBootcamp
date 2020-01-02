@@ -1,11 +1,22 @@
 h1 {
-    color: red;
+  color: rgba(255, 255, 255, 0.5);
+  /* border-color: purple;
+  border-width: 5px;
+  border-style: solid; */
+
+  border: 8px dashed purple;
 }
 
-li {
-    color: green;
-}
+/* width 
+   color 
+   style  */
+
 
 h4 {
-    color: purple;
+  background: blue;
+}
+
+body {
+    background: pink;
+  /* background: url(https://i.pinimg.com/originals/b6/07/95/b60795007716db1797bf6245dda97361.jpg);*/
 }
