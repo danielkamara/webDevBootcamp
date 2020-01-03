@@ -1,0 +1,39 @@
+/* font-family */
+
+body {
+    font-size: 10px;
+}
+
+h1 {
+    font-family: Georgia;
+}
+
+p {
+    font-family: Arial;
+}
+
+/* font-size */
+
+h1 {
+font-size: 5em;
+
+}
+
+p {
+    font-size: 2em;
+}
+
+span {
+    font-size: 2em;
+}
+
+/* font-weight */
+
+p {
+    font-weight: bold;
+}
+
+/* line-height */
+
+
+/* text-align */
