@@ -41,6 +41,11 @@ h4 + ul {
 
 /* Attribute Selector */
 
-
+a[href="https//www.google.com"] {
+    background: blue;
+}
 /* *nth of types */
 
+ul:nth-of-type(3) {
+background: purple;
+}
