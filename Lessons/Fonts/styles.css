@@ -35,5 +35,27 @@ p {
 
 /* line-height */
 
+p {
+    line-height: 2;
+}
 
 /* text-align */
+
+
+h1{
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+/* text-decoration */
+
+p {
+    text-decoration: underline;
+}
+
+h1 {
+    text-decoration: line-through;
+}
