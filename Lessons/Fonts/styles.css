@@ -5,11 +5,11 @@ body {
 }
 
 h1 {
-    font-family: Georgia;
+    font-family: Indie Flower;
 }
 
 p {
-    font-family: Arial;
+    font-family: Raleway;
 }
 
 /* font-size */
@@ -30,7 +30,7 @@ span {
 /* font-weight */
 
 p {
-    font-weight: bold;
+    font-weight: normal;
 }
 
 /* line-height */
