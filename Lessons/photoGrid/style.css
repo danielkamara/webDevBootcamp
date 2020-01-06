@@ -1,8 +1,9 @@
 img {
     width: 30%;
     float: left;
+    margin: 1.66%;
 }
 
 .resize {
-    height: 250px;
+    height: 30%;
 }
