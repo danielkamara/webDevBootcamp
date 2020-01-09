@@ -2,6 +2,8 @@ body {
     background: url(https://images.freeimages.com/images/small-previews/f1d/cat-1408257.jpg);
     background-size: cover;
     background-position: center;
+    font-family: lato;
+    color: white;
 }
 
 
