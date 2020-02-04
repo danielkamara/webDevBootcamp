@@ -27,3 +27,14 @@ while (num <= 333) {
     num += 1;
 
 }
+
+console.log("Printing all numbers divisible by 5 & 3, between 5 & 50");
+var num = 3;
+
+while (num <= 50) {
+    if (num % 3 == 0 && num % 5 == 0) {
+        console.log(num);
+    }
+    num += 1;
+
+}
