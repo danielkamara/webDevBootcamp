@@ -1,4 +1,6 @@
 document.getElementById("first");
 document.getElementsByTagName("p");
 document.getElementsByClassName(special)[0];
-document.querySelector("p");
+var h1 = document.querySelector("h1");
+
+h1.style.color = "yellow";
