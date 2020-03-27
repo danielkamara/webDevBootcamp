@@ -1,5 +1,9 @@
 <h1>The Post Page</h1>
 
-<% for(let i = 0; i < post.length; i++) { %>
-<li>POST GOES HERE</li>
-<% } %>
+<% for( let i = 0; i < post.length; i++) { %>
+<li><%= post[i].title %> - <strong><%= post[i].author %></strong></li>
+
+<!--  -->
+<% } %> <% post.forEach((post) => { %>
+<li><%= post.title %> - <strong><%= post.author %></strong></li>
+<% }) %>

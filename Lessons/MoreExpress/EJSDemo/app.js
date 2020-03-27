@@ -11,27 +11,25 @@ app.get("/fallinlovewith/:thing", (req, res) => {
         thingVar: thing
     });
 
-
-    app.get("/post", (req, res) => {
-        let post = [{
-                title: "I don't know what i'm doing!!!!",
-                author: "Daniel Kamara"
-            },
-            {
-                title: "Reasonable Doubt",
-                author: "Jay-Z"
-            },
-            {
-                title: "Crazy In Love",
-                author: "Beyonce"
-            }
-        ];
-        res.render("post.ejs", {
-            post: post
-        });
-    });
-
 });
+
+app.get("/post", (req, res) => {
+    let post = [{
+            title: "Crazy In Love",
+            author: "Beyonce"
+        },
+        {
+            title: "Reasonable Doubt",
+            author: "Jay-Z"
+        },
+        {
+            title: "The Carters",
+            author: "Jay-Z & Beyonce"
+        },
+    ]
+    res.render("post.ejs", {post: post});
+})
+
 
 
 app.listen(3000, () => {
