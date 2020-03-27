@@ -1,13 +1,16 @@
 let express = require("express");
 let app = express();
 
+app.use(express.static("public"));
+app.set("view engine", "ejs");
+
 app.get("/", (req, res) => {
-    res.render("home.ejs");
+    res.render("home");
 });
 
 app.get("/fallinlovewith/:thing", (req, res) => {
     let thing = req.params.thing;
-    res.render("love.ejs", {
+    res.render("love", {
         thingVar: thing
     });
 
@@ -27,7 +30,7 @@ app.get("/post", (req, res) => {
             author: "Jay-Z & Beyonce"
         },
     ]
-    res.render("post.ejs", {post: post});
+    res.render("post", {post: post});
 })
 
 
