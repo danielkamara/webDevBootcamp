@@ -13,7 +13,6 @@ app.get("/fallinlovewith/:thing", (req, res) => {
     res.render("love", {
         thingVar: thing
     });
-
 });
 
 app.get("/post", (req, res) => {
