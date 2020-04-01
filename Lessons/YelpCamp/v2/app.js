@@ -4,7 +4,10 @@ const express = require("express"),
     mongoose = require("mongoose")
 
 
-mongoose.connect("mongodb://localhost/yelp_camp");
+mongoose.connect("mongodb://localhost:27017/yelp_camp", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
 
 app.use(bodyParser.urlencoded({
     extended: true
@@ -14,29 +17,30 @@ app.set("view engine", "ejs");
 
 
 // SCHEMA SETUP 
-
 let campGroundSchema = new mongoose.Schema({
     name: String,
-    image: String
+    image: String,
+    description: String
 })
 
 let Campground = mongoose.model("Campground", campGroundSchema);
 
 
-// Campground.create({
-//     name: "Granite Hill",
-//     image: "https://cdn.pixabay.com/photo/2017/08/07/02/34/people-2598902__340.jpg"
-// }, (err, campground) => {
-//     if (err) {
-//         console.log(err);
-//     } else {
-//         console.log("NEWLY CREATED CAMPGROUND: ");
-//         console.log(campground)
-//     }
-// })
+Campground.create({
+    name: "Granite Hill",
+    image: "https://cdn.pixabay.com/photo/2017/08/07/02/34/people-2598902__340.jpg",
+    description: "This is a nice picture, don't ya think?"
+}, (err, campground) => {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log("NEWLY CREATED CAMPGROUND: ");
+        console.log(campground)
+    }
+})
 
 
-
+// INDEX - show all campgrounds
 app.get("/", (req, res) => {
     res.render("landing");
 });
@@ -55,7 +59,7 @@ app.get("/campgrounds", (req, res) => {
 
 });
 
-
+// CREATE - Add new campground to DB
 app.post("/campgrounds", (req, res) => {
     // get data from form and add to campgrounds array
     let name = req.body.name;
@@ -78,11 +82,17 @@ app.post("/campgrounds", (req, res) => {
 
 })
 
-
+// NEW - Show form to create new campground
 app.get("/campgrounds/new", (req, res) => {
     res.render("new.ejs");
 });
 
+
+app.get("/campgrounds/:id", (req, res) => {
+    // find the campground with provided ID
+    // render show template with that campground
+    res.send("THIS WILL BE THE SHOW PAGE ONE DAY!")
+})
 
 app.listen(3000, () => {
     console.log("The YelpCamp Server Is Running!!!");
