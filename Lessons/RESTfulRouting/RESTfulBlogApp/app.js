@@ -39,6 +39,8 @@ const Blog = mongoose.model('Blog', blogSchema)
 
 //  RESTFUL ROUTES
 app.get('/', (req, res) => res.redirect('/blogs'))
+
+// INDEX ROUTE 
 app.get('/blogs', (req, res) => {
     Blog.find({}, (err, blogs) => {
         if (err) {
@@ -48,6 +50,11 @@ app.get('/blogs', (req, res) => {
         }
     })
 })
+// NEW ROUTE
+app.get('/blogs/new', (req,res) => {
+    res.render('new');
+})
+// CREATE ROUTE
 
 
 app.listen(port, () => console.log(`App is listening at http://localhost:${port}`))
