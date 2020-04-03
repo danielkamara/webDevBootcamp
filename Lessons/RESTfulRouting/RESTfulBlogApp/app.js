@@ -43,8 +43,10 @@ app.get('/', (req, res) => res.redirect('/blogs'))
 // INDEX ROUTE 
 app.get('/blogs', (req, res) => {
     Blog.find({}, (err, blogs) => {
-        err ? console.log('ERROR')
-        : res.render('index', {blogs: blogs })
+        err ? console.log('ERROR') :
+            res.render('index', {
+                blogs: blogs
+            })
     })
 })
 // NEW ROUTE
@@ -55,14 +57,20 @@ app.get('/blogs/new', (req, res) => {
 app.post('/blogs', (req, res) => {
     //  Create blog
     Blog.create(req.body.blog, (err, newBlog) => {
-          err ? res.render('new')
+        err ? res.render('new')
             // redirect to the index
             :
             res.redirect('/blogs')
     })
-
 })
 
+//  SHOW ROUTE
+app.get('/blogs/:id', (req, res) => {
+    Blog.findById(req.params.id, (err, foundBlog) => {
+        err ? res.redirect('/blogs')
+        : res.render('show', {blog: foundBlog})
+    })
+})
 
 
 app.listen(port, () => console.log(`App is listening at http://localhost:${port}`))
