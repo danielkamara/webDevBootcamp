@@ -9,4 +9,10 @@
 - Add SHOW template
 - Style the SHOW template
 
+# Edit/Update
+- Add Edit Route
+- Add Edit Form
+- Add Update Route
+- Add Update Form
+- Add Method-Override
 

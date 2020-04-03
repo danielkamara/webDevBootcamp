@@ -67,10 +67,23 @@ app.post('/blogs', (req, res) => {
 //  SHOW ROUTE
 app.get('/blogs/:id', (req, res) => {
     Blog.findById(req.params.id, (err, foundBlog) => {
-        err ? res.redirect('/blogs')
-        : res.render('show', {blog: foundBlog})
+        err ? res.redirect('/blogs') :
+            res.render('show', {
+                blog: foundBlog
+            })
     })
 })
+
+//  EDIT ROUTE
+app.get("/blogs/:id/edit", (req, res) => {
+    Blog.findById(req.params.id, (err, foundBlog) => {
+        err ? res.redirect('/blogs') :
+            res.render('edit', {
+                blog: foundBlog
+            })
+    })
+})
+
 
 
 app.listen(port, () => console.log(`App is listening at http://localhost:${port}`))
