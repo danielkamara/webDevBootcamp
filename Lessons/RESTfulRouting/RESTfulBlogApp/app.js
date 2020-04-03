@@ -89,9 +89,23 @@ app.get('/blogs/:id/edit', (req, res) => {
 // UPDATE ROUTE
 app.put('/blogs/:id', (req, res) => {
     Blog.findByIdAndUpdate(req.params.id, req.body.blog, (err, updatedBlog) => {
-        err ? res.redirect('/blogs')
-        : res.redirect('/blogs/' + req.params.id)
+        err ? res.redirect('/blogs') :
+            res.redirect('/blogs/' + req.params.id)
     })
 })
+
+// DELETE ROUTE 
+app.delete('/blogs/:id', (req, res) => {
+    // destroy blog
+    Blog.findByIdAndRemove(req.params.id, (err) => {
+        err ? res.redirect('/blogs') :
+            res.redirect('/blogs')
+    })
+    // redirect somewhere
+ 
+})
+
+
+
 
 app.listen(port, () => console.log(`App is listening at http://localhost:${port}`))
