@@ -1,4 +1,5 @@
-const methodOverride = require('method-override'),
+const expressSanitizer = require('express-sanitizer'),
+    methodOverride = require('method-override'),
     bodyParser = require('body-parser'),
     mongoose = require('mongoose'),
     express = require('express'),
@@ -19,6 +20,8 @@ app.use(methodOverride('_method'))
 app.use(bodyParser.urlencoded({
     extended: true
 }))
+app.use(expressSanitizer())
+
 
 
 // MONGOOSE/MODEL CONFIG
@@ -58,6 +61,7 @@ app.get('/blogs/new', (req, res) => {
 // CREATE ROUTE
 app.post('/blogs', (req, res) => {
     //  Create blog
+    req.body.blog.body = req.sanitize(req.body.blog.body)
     Blog.create(req.body.blog, (err, newBlog) => {
         err ? res.render('new')
             // redirect to the index
@@ -88,6 +92,7 @@ app.get('/blogs/:id/edit', (req, res) => {
 
 // UPDATE ROUTE
 app.put('/blogs/:id', (req, res) => {
+    req.body.blog.body = req.sanitize(req.body.blog.body)
     Blog.findByIdAndUpdate(req.params.id, req.body.blog, (err, updatedBlog) => {
         err ? res.redirect('/blogs') :
             res.redirect('/blogs/' + req.params.id)
@@ -102,7 +107,7 @@ app.delete('/blogs/:id', (req, res) => {
             res.redirect('/blogs')
     })
     // redirect somewhere
- 
+
 })
 
 
