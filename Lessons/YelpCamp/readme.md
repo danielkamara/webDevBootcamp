@@ -37,6 +37,14 @@ Each Campground has:
 - Add a show route/template
 
 
+# Refactor Mongoose Code
+- Create  a models directory
+- Use module.exports
+- Require everything correctly!
+
+# Add Seeds.js file
+- Run the seeds file every time the server starts
+
 RESTFUL ROUTES
 
 Name         Path             HTTP Verb    Purpose  

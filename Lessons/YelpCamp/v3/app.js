@@ -3,9 +3,10 @@ const express = require("express"),
     bodyParser = require("body-parser"),
     mongoose = require("mongoose"),
 Campground = require("./models/campground")
-Comment = require("./models/comment")
-User = require("./model/user")
+seedDB = require("./seeds")
 
+
+seedDB()
 mongoose.connect("mongodb://localhost:27017/yelp_camp_v3", {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -13,7 +14,7 @@ mongoose.connect("mongodb://localhost:27017/yelp_camp_v3", {
 app.use(bodyParser.urlencoded({
     extended: true
 }));
-app.set("view engine", "ejs");
+app.set("view engine", "ejs")
 
 
 
