@@ -5,13 +5,7 @@ mongoose.connect("mongodb://localhost/blog_demo", {
 })
 
 
-// POST - title,  content
-const postSchema = new mongoose.Schema({
-    title: String,
-    content: String
-})
 
-const Post = mongoose.model("Post", postSchema)
 
 // USER   - email, name
 const userSchema = new mongoose.Schema({
