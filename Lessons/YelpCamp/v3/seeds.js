@@ -36,7 +36,7 @@ function seedDB() {
                     author: "Homer"
                 }, (err, comment) => {
                     err ? console.log(err) :
-                    campground.comments.push(comment)
+                        campground.comments.push(comment)
                     campground.save()
                     console.log("Created new comment")
                 })
@@ -45,7 +45,6 @@ function seedDB() {
 
     })
 
-    // add a few comments
 }
 
 module.exports = seedDB

@@ -6,7 +6,7 @@ Campground = require("./models/campground")
 seedDB = require("./seeds")
 
 
-seedDB()
+
 mongoose.connect("mongodb://localhost:27017/yelp_camp_v3", {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -15,23 +15,8 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 app.set("view engine", "ejs")
+seedDB()
 
-
-
-
-
-// Campground.create({
-//     name: "Granite Hill",
-//     image: "https://cdn.pixabay.com/photo/2017/08/07/02/34/people-2598902__340.jpg",
-//     description: "This is a nice picture, don't ya think?"
-// }, (err, campground) => {
-//     if (err) {
-//         console.log(err);
-//     } else {
-//         console.log("NEWLY CREATED CAMPGROUND: ");
-//         console.log(campground)
-//     }
-// })
 
 
 // INDEX - show all campgrounds
@@ -86,7 +71,7 @@ app.get("/campgrounds/new", (req, res) => {
 // Show - shows more info about one campground
 app.get("/campgrounds/:id", (req, res) => {
     // find the campground with provided ID
-    Campground.findById(req.params.id, (err, foundCampground) => {
+    Campground.findById(req.params.id).populate("comments").exec((err, foundCampground) => {
         if (err) {
             console.log(err)
         } else {
