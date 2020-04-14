@@ -13,6 +13,7 @@ mongoose.connect("mongodb://localhost:27017/yelp_camp_v4", {
     useUnifiedTopology: true
 });
 mongoose.Promise = global.Promise;
+app.use(express.static(__dirname + '/public'))
 app.use(bodyParser.urlencoded({
     extended: true
 }));
