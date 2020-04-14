@@ -49,7 +49,15 @@ Each Campground has:
 - Make my errors go away!!!
 - Display comments on the campground show page
 
+# Comment New/Create
+- Discuss nested routes
+- Add the comment new and create routes
+- Add the new comment form
 
+# Style SHow page
+
+- Add sidebar to show page
+- Display comments nicely
 
 
 
