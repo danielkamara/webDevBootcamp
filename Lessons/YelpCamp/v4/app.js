@@ -101,11 +101,12 @@ app.get("/campgrounds/:id/comments/new", (req, res) => {
 
 app.post("/campgrounds/:id/comments", (req, res) => {
     // lookup campground using ID
+    console.log(req.params)
     Campground.findById(req.params.id, (err, campground) => {
         err ? console.log(err) :
             Comment.create(req.body.comment, (err, comment) => {
                 err ? console.log(err) :
-                    campgrounds.comments.push(comment)
+                    campground.comments.push(comment)
                 campground.save()
                 res.redirect("/campgrounds/" + campground._id)
             })

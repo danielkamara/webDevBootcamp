@@ -45,14 +45,23 @@ Each Campground has:
 # Add Seeds.js file
 - Run the seeds file every time the server starts
 
+# Add the Comment model
+- Make my errors go away!!!
+- Display comments on the campground show page
+
+
+
+
+
+
 RESTFUL ROUTES
 
 Name         Path             HTTP Verb    Purpose  
 ====================================================
-INDEX    |   /dogs          |   GET      |    Display a list of all dogs
-NEW      |   /dogs/new      |   GET      |    Displays a form to make a new dog
-CREATE   |   /dogs          |   POST     |    Add new dog to DB
-SHOW     |   /dogs/:id      |   GET      |    Shows info about one dog
-EDIT     |   /dogs/:id/edit |   GET      |    Show edit form for one dog
-UPDATE   |   /dogs/:id      |   PUT      |    Update a particular dog, then redirects somewhere
-Destroy  |   /dogs/:id      |   DELETE   |    Delete a particular dog, then redirects somewhere
+INDEX       /dogs             GET          Display a list of all dogs
+NEW         /dogs/new         GET          Displays a form to make a new dog
+CREATE      /dogs             POST         Add new dog to DB
+SHOW        /dogs/:id         GET          Shows info about one dog
+EDIT        /dogs/:id/edit    GET          Show edit form for one dog
+UPDATE      /dogs/:id         PUT          Update a particular dog, then redirects somewhere
+Destroy     /dogs/:id         DELETE       Delete a particular dog, then redirects somewhere
